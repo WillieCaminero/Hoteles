@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3445489107">
+    <data-source source="LOCAL" name="Oracle - 12c" uuid="7f2cc173-87d5-4d0f-83ed-ef393b328fc6">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@TNS_ORCL</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="TNSADMIN_DIR" value="C:\Oracle_12C\product\12.1.0\dbhome_1\network\admin" />
+      </jdbc-additional-properties>
+    </data-source>
+  </component>
+</project>

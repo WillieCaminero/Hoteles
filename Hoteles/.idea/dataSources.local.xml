@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Oracle - 12c" uuid="7f2cc173-87d5-4d0f-83ed-ef393b328fc6">
+      <secret-storage>master_key</secret-storage>
+      <user-name>C##RESER_HOTEL</user-name>
+      <schema-pattern>*.C##RESER_HOTEL</schema-pattern>
+      <default-schemas>*.C##RESER_HOTEL</default-schemas>
+    </data-source>
+  </component>
+</project>
