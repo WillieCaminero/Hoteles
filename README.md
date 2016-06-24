@@ -14,5 +14,5 @@ Specifications
 - JDK			    ->		1.8
 - DATA BASE   ->		Oracle 12c
 - DB SCHEMA	  ->		C##RESER_HOTEL
-- FRAMEWORKS	->		Spring y Hibernate (Maven Project)
+- FRAMEWORKS	->		Spring 4.2.6 y Hibernate 5.0.1 (Maven Project)
 
