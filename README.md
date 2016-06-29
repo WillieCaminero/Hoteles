@@ -1,14 +1,21 @@
-# Hoteles
-Reservaciones de Habitaciones de Hoteles
+Sistema de Reservaciones para Hoteles
+======
+Se encarga de manejar las reservaciones de los clientes que desean registrarse en un hotel.
 
-Collaborators
-- Willie Caminero (Github -> WillieMn08)
-- Jeremy Lopez	  (Github -> Jeremy410)
+## Descargar
+* [Version 0.1]
+
+## Usage
+```$ git clone https://github.com/WillieMn08/Hoteles.git
+...```
+
+## Contributors
+- <a href="https://github.com/WillieMn08" target="_blank">Willie Caminero</a>
+- <a href="https://github.com/Jeremy410" target="_blank">Jeremy Lopez</a>
 - Laura Vidal
 - Moises Maldonado
 
-Specifications
-
+## Specifications
 - Language - Java
 - IDE - Intellij Idea 2016.1.1
 - JDK - 1.8
