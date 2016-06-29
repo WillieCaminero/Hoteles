@@ -2,10 +2,10 @@ Sistema de Reservaciones para Hoteles
 ======
 Se encarga de manejar las reservaciones de los clientes que desean registrarse en un hotel.
 
-## Descargar
+## Version
 * [Version 0.1]
 
-## Usage
+## Download
 ```$ git clone https://github.com/WillieMn08/Hoteles.git
 ...```
 
