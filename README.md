@@ -21,5 +21,5 @@ Se encarga de manejar las reservaciones de los clientes que desean registrarse e
 - JDK - 1.8
 - DATA BASE - Oracle 12c
 - DB SCHEMA - C##RESER_HOTEL
-- FRAMEWORKS - Spring 4.2.6 y Hibernate 5.0.1 (Maven Project)
+- FRAMEWORKS - Spring 4.2.6, Hibernate 5.0.1 (Maven Project), JQuery y Bootstrap
 
