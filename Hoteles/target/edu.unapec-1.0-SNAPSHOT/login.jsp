@@ -24,15 +24,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="login">
-                <form:form method="POST"  action="/IniciarSesion.html" modelAttribute="login" class="form-horizontal">
+                <form:form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login" class="form-horizontal">
                     <div class="form-group">
                         <div class="col-sm-10">
-                             <form:input path="usuario" id="inputUsuario" cssClass="form-control" placeholder="Usuario"/>
+                             <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control" placeholder="Usuario"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <form:input path="clave" id="inputClave" cssClass="form-control" placeholder="Clave"/>
+                            <form:input path="clave" id="clave" name="clave" cssClass="form-control" placeholder="Clave"/>
                         </div>
                     </div>
                     <div>
@@ -52,7 +52,11 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../../resources/js/jquery-1.11.3.min.js"></script>
+    <!-- jQuery Validate -->
+    <script src="../../resources/js/jquery.validate.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../../resources/js/bootstrap.min.js"></script>
+    <!-- Validations -->
+    <script src="../../resources/js/validations.js"></script>
 </body>
 </html>
