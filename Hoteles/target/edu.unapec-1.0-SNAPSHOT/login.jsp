@@ -15,48 +15,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
-    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../resources/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../resources/css/normalize.css" rel="stylesheet">
+    <link href="../resources/css/app.min.css" rel="stylesheet">
+    <link href="../resources/css/animate.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../../resources/css/styles.css" rel="stylesheet">
+    <link href="../resources/css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="login">
-                <form:form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login" class="form-horizontal">
+
+    <section>
+        <div class="cover"></div>
+        <div class="row" id="login-container">
+            <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 animated fadeIn" style="margin-top: 100px;">
+                <div class="login-form">
+                    <div class="row">
+                        <img src="../resources/images/logo.png" width="200" class="img-responsive" style="margin: auto; display: table; padding-bottom: 15px;"alt="Logo">
+                    </div>
+                    <form:form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login">
                     <div class="form-group">
-                        <div class="col-sm-10">
-                             <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control" placeholder="Usuario"/>
+                           <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control input-style" placeholder="Usuario"/>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <form:input path="clave" id="clave" name="clave" cssClass="form-control" placeholder="Clave"/>
+                        <div class="form-group">
+                           <form:password path="clave" id="clave" name="clave" cssClass="form-control input-style" placeholder="Clave"/>
                         </div>
-                    </div>
-                    <div>
-                        <c:if test="${respuestaLogin != null && !respuestaLogin.isExitoso()}">
-                            <div class="col-sm-10 alert alert-danger">${respuestaLogin.getMensaje()}</div>
-                        </c:if>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-default">Iniciar Sesión</button>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Recordarme
+                            </label>
                         </div>
-                    </div>
-                </form:form>
+                        <div class="form-group">
+                            <c:if test="${respuestaLogin != null && !respuestaLogin.isExitoso()}">
+                                ${respuestaLogin.getMensaje()}
+                            </c:if>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger btn-block">Iniciar sesion</button>
+                        </div>
+                    </form:form>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../resources/js/jquery-1.11.3.min.js"></script>
-    <!-- jQuery Validate -->
-    <script src="../../resources/js/jquery.validate.min.js"></script>
+    <script src="../resources/js/jquery-1.11.3.min.js"></script>
+    <!-- jQuery Validate (necessary for Validations)-->
+    <script src="../resources/js/jquery.validate.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../resources/js/bootstrap.min.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
     <!-- Validations -->
-    <script src="../../resources/js/validations.js"></script>
+    <script src="../resources/js/validations.js"></script>
 </body>
 </html>
