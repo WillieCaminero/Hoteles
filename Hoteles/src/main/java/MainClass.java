@@ -1,3 +1,4 @@
+import edu.unapec.configuraciones.WebAppContext;
 import edu.unapec.entidades.UsuariosEntity;
 import edu.unapec.servicios.implementaciones.UsuariosServImpl;
 import edu.unapec.servicios.interfaces.UsuariosServIF;
@@ -28,7 +29,7 @@ public class MainClass {
         usuariosEntity.setEstado(1);
         usuariosEntity.setNombres("jkljkjlj");
         usuariosEntity.setTelefono("8098998889");
-        System.out.println(usuariosServicio.agregarUsuario(usuariosEntity));
+        //System.out.println(usuariosServicio.agregarUsuario(usuariosEntity));
 
         System.out.println("*************************************************");
         List<UsuariosEntity> listaUsuarios = usuariosServicio.obtenerUsuarios();

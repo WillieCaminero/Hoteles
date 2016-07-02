@@ -6,38 +6,46 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>Reservaciones Habitaciones Hotel</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Bootstrap -->
     <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="../../resources/css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <h2>${mensaje}</h2>
     <div class="row">
         <div class="col-md-12">
             <div class="login">
-                <form method="POST" modelAttribute="loginForm" action="/Login/IniciarSesion" class="form-horizontal">
+                <form:form method="POST"  action="/IniciarSesion.html" modelAttribute="login" class="form-horizontal">
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Usuario">
+                             <form:input path="usuario" id="inputUsuario" cssClass="form-control" placeholder="Usuario"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Clave">
+                            <form:input path="clave" id="inputClave" cssClass="form-control" placeholder="Clave"/>
                         </div>
+                    </div>
+                    <div>
+                        <c:if test="${respuestaLogin != null && !respuestaLogin.isExitoso()}">
+                            <div class="col-sm-10 alert alert-danger">${respuestaLogin.getMensaje()}</div>
+                        </c:if>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-default">Iniciar Sesión</button>
                         </div>
                     </div>
-                </form>
+                </form:form>
             </div>
         </div>
     </div>

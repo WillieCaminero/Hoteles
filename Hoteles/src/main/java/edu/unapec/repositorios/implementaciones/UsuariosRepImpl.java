@@ -3,6 +3,7 @@ package edu.unapec.repositorios.implementaciones;
 import edu.unapec.entidades.UsuariosEntity;
 import edu.unapec.repositorios.interfaces.UsuariosRepIF;
 import edu.unapec.utilidades.HibernateUtil;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,17 @@ import java.util.List;
  */
 @Repository("usuariosRepImpl")
 public class UsuariosRepImpl implements UsuariosRepIF {
+
+    @Override
+    public List<UsuariosEntity> iniciarSesion(String usuario, String clave) {
+        Session session = HibernateUtil.obtenerInstancia().obtenerFabricaSesion().openSession();
+        String _HQL = "from UsuariosEntity where usuario = :usuario and clave = :clave";
+        Query query = session.createQuery(_HQL);
+        query.setParameter("usuario", usuario);
+        query.setParameter("clave", clave);
+        List<UsuariosEntity> listaUsuarios = query.list();
+        return listaUsuarios;
+    }
 
     @Override
     public List<UsuariosEntity> obtenerUsuarios() {

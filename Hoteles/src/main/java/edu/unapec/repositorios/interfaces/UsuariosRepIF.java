@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface UsuariosRepIF {
 
+    List<UsuariosEntity> iniciarSesion(String usuario, String clave);
+
     List<UsuariosEntity> obtenerUsuarios();
 
     boolean agregarUsuario(UsuariosEntity usuariosEntity);
