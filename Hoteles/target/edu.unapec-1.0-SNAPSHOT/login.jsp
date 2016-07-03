@@ -26,34 +26,35 @@
 <body>
 
     <section>
-        <div class="cover"></div>
-        <div class="row" id="login-container">
-            <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 animated fadeIn" style="margin-top: 100px;">
-                <div class="login-form">
-                    <div class="row">
-                        <img src="../resources/images/logo.png" width="200" class="img-responsive" style="margin: auto; display: table; padding-bottom: 15px;"alt="Logo">
+        <div class="cover">
+            <div class="row" id="login-container">
+                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 animated fadeIn" style="margin-top: 100px;">
+                    <div class="login-form">
+                        <div class="row">
+                            <img src="../resources/images/logo.png" width="200" class="img-responsive" style="margin: auto; display: table; padding-bottom: 15px;"alt="Logo">
+                        </div>
+                        <form:form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login">
+                        <div class="form-group">
+                               <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control input-style" placeholder="Usuario"/>
+                            </div>
+                            <div class="form-group">
+                               <form:password path="clave" id="clave" name="clave" cssClass="form-control input-style" placeholder="Contraseña"/>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Recordarme
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <c:if test="${respuestaLogin != null && !respuestaLogin.isExitoso()}">
+                                    ${respuestaLogin.getMensaje()}
+                                </c:if>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-danger btn-block">Iniciar sesion</button>
+                            </div>
+                        </form:form>
                     </div>
-                    <form:form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login">
-                    <div class="form-group">
-                           <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control input-style" placeholder="Usuario"/>
-                        </div>
-                        <div class="form-group">
-                           <form:password path="clave" id="clave" name="clave" cssClass="form-control input-style" placeholder="Clave"/>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Recordarme
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <c:if test="${respuestaLogin != null && !respuestaLogin.isExitoso()}">
-                                ${respuestaLogin.getMensaje()}
-                            </c:if>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-danger btn-block">Iniciar sesion</button>
-                        </div>
-                    </form:form>
                 </div>
             </div>
         </div>

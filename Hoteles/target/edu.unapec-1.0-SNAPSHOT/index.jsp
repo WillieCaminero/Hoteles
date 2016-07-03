@@ -29,7 +29,7 @@
                 <a class="pull-left" href="index.html"></a>
                 <nav class="pull-right">
                     <!-- Button trigger modal -->
-                    <a href="">Realizar una reservación</a>
+                    <a href="#">Realizar una reservación</a>
                     <a href="login.html">Cerrar sesión</a>
                 </nav>
             </div>

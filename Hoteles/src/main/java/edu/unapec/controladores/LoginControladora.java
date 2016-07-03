@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
 import java.util.List;
 
 /**
@@ -33,7 +35,7 @@ public class LoginControladora {
     }
 
     @RequestMapping(value = "/IniciarSesion", method = RequestMethod.POST)
-    public String iniciarSesion( @ModelAttribute("login") Login login, Model model){
+    public ModelAndView iniciarSesion(@ModelAttribute("login") Login login, Model model){
 
         UsuariosServIF usuariosServicio = appContext.getBean("usuariosServImpl", UsuariosServImpl.class);
         RespuestaLogin respuestaLogin = new RespuestaLogin();
@@ -44,11 +46,11 @@ public class LoginControladora {
         respuestaLogin = usuariosServicio.iniciarSesion(usuario, clave);
 
         if (respuestaLogin.isExitoso()){
-            return "redirect:/index.jsp";
-        }else{
-            model.addAttribute("respuestaLogin", respuestaLogin);
+            return new ModelAndView("index");
         }
-        return "/login";
+
+        model.addAttribute("respuestaLogin", respuestaLogin);
+        return new ModelAndView("login");
     }
 
 }

@@ -1,6 +1,9 @@
 package edu.unapec.servicios.implementaciones;
 
+import edu.unapec.entidades.MensajesSistemaEntity;
 import edu.unapec.entidades.UsuariosEntity;
+import edu.unapec.enumerados.MesajesSistemaEnum;
+import edu.unapec.repositorios.interfaces.MensajesSistemaRepIF;
 import edu.unapec.repositorios.interfaces.UsuariosRepIF;
 import edu.unapec.respuestas.RespuestaLogin;
 import edu.unapec.servicios.interfaces.UsuariosServIF;
@@ -16,6 +19,7 @@ import java.util.List;
 public class UsuariosServImpl implements UsuariosServIF {
 
     private UsuariosRepIF usuarioRep;
+    private MensajesSistemaRepIF mensajesRep;
 
     public UsuariosServImpl(){}
 
@@ -23,12 +27,15 @@ public class UsuariosServImpl implements UsuariosServIF {
     public RespuestaLogin iniciarSesion(String usuario, String clave) {
 
         RespuestaLogin respuestaLogin = new RespuestaLogin();
+        MensajesSistemaEntity mensajesSistema = new MensajesSistemaEntity();
         List<UsuariosEntity> listaUsuarios = usuarioRep.iniciarSesion(usuario, clave);
 
         //Validando si el usuario es correcto
         if(listaUsuarios.size() == 0){
+            mensajesSistema.setId(MesajesSistemaEnum.USUARIO_CLAVE_INCORRECTAS.obtenerIdMensaje());
+            List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);
             respuestaLogin.setExitoso(false);
-            respuestaLogin.setMensaje("Usuario y/o Clave son incorrectas");
+            respuestaLogin.setMensaje(mensajes.get(0).getDescripcion());
         }else {
             respuestaLogin.setExitoso(true);
         }
@@ -64,4 +71,10 @@ public class UsuariosServImpl implements UsuariosServIF {
     public void setUsuarioRep(UsuariosRepIF usuariosRepImpl) {
         this.usuarioRep = usuariosRepImpl;
     }
+
+    @Autowired
+    public void setMensajesRep(MensajesSistemaRepIF mensajesSistemaRepImpl) {
+        this.mensajesRep = mensajesSistemaRepImpl;
+    }
+
 }

@@ -28,6 +28,7 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(RolesEntity.class);
         configuration.addAnnotatedClass(TiposRolesEntity.class);
         configuration.addAnnotatedClass(UsuariosEntity.class);
+        configuration.addAnnotatedClass(MensajesSistemaEntity.class);
         configuration.configure("hibernate.cfg.xml");
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
                 configuration.getProperties()).build();
