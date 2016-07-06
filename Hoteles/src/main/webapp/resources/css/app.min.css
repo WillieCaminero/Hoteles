@@ -1,6 +1,6 @@
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .input-style:focus {
     outline: 0;
@@ -265,7 +265,7 @@ body {
     box-sizing: inherit;
 }
 .text-orange {
-    color: #ff8d3c;
+    color: #9e2a2a;
 }
 .text-aqua {
     color: #00cbcc;
@@ -274,7 +274,7 @@ body {
     color: #f93834;
 }
 .color-orange {
-    background-color: #ff8d3c;
+    background-color: #9e2a2a;
 }
 .color-red {
     background-color: #f93834;
@@ -283,11 +283,11 @@ body {
     background-color: #00cbcc;
 }
 hr {
-    border-color: #ff8d3c;
+    border-color: #9e2a2a;
     margin: 15px 0;
 }
 .btn-orange {
-    background: #ff8d3c;
+    background: #9e2a2a;
     color: #fff;
     margin: 15px 0 30px;
 }
@@ -310,7 +310,7 @@ footer {
     width: 100%;
     text-align: center;
     padding: 40px 0;
-    background: #ba2421;
+    background: #9e2a2a;
     border-bottom: 3px solid #a3b1b1;
     color: white;
 }
@@ -403,11 +403,11 @@ footer p {
 }
 footer p a {
     text-decoration: none;
-    color: #ff8d3c;
+    color: #9e2a2a;
 }
 footer p a:hover {
     text-decoration: none;
-    color: #ff8d3c;
+    color: #9e2a2a;
 }
 .border-radius {
     -webkit-border-radius: 10px;
@@ -462,7 +462,7 @@ footer p a:hover {
     height: 40px;
     width: 100%;
     padding: 5px 15px;
-    background-color: #ff8d3c;
+    background-color: #9e2a2a;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -486,14 +486,19 @@ footer p a:hover {
     font-size: 20px;
     display: inline-block;
 }
+
+
+#header-mobile nav a:hover{
+    background-color: #b23431;
+}
 #header-mobile nav {
     display: block;
     width: 100%;
     position: absolute;
     left: 0;
     top: 100%;
-    border-top: 2px solid #eb7928;
-    background: rgba(255, 141, 60, 0.9);
+    border-top: 2px solid #9e2a2a;
+    background: #ba3232;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -517,7 +522,7 @@ footer p a:hover {
     font-weight: bold;
     display: block;
     text-align: center;
-    border-bottom: 1px solid #eb7928;
+    border-bottom: 1px solid #9e2a2a;
 }
 #header-mobile nav .buttons > a:last-child {
     border: none;
@@ -713,11 +718,11 @@ footer p a:hover {
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2), 0px 0px 15px rgba(0, 0, 0, 0.2), 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 .homeheader nav a:hover {
-    color: #ff8d3c;
+    color: #9e2a2a;
 }
 .normalheader {
     height: 90px;
-    background: #ba2421;
+    background: #9e2a2a;
     padding: 15px 0;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -740,7 +745,7 @@ footer p a:hover {
 }
 .normalheader nav a:hover,
 .normalheader nav a.active {
-    color: #ff8d3c;
+    color: #9e2a2a;
 }
 .idioma {
     display: none;
@@ -748,7 +753,7 @@ footer p a:hover {
     position: absolute;
     top: 0;
     right: 0;
-    background: #ff8d3c;
+    background: #9e2a2a;
     padding: 5px 10px;
     -webkit-border-radius: 0px 0px 5px 5px;
     -moz-border-radius: 0px 0px 5px 5px;
@@ -1068,7 +1073,7 @@ footer p a:hover {
 }
 .reservaciones p a {
     text-decoration: none;
-    color: #ff8d3c;
+    color: #9e2a2a;
 }
 .reservaciones .form {
     float: left;
@@ -1121,10 +1126,10 @@ footer p a:hover {
     color: #fff;
     font-weight: bold;
     font-size: 18px;
-    background-color: #ff8d3c;
+    background-color: #9e2a2a;
 }
 .reservaciones .form button:hover {
-    background-color: #eb7928;
+    background-color: #9e2a2a;
 }
 #sideReserv {
     padding: 0;
@@ -1172,7 +1177,7 @@ footer p a:hover {
 #newsletter h3 {
     margin: 0;
     font-weight: bold;
-    color: #ff8d3c;
+    color: #9e2a2a;
     text-transform: uppercase;
 }
 #newsletter p {
@@ -1191,7 +1196,7 @@ footer p a:hover {
     height: 50px;
     width: 54px;
     margin-left: -15px;
-    background-color: #ff8d3c;
+    background-color: #9e2a2a;
     color: #fff;
     -webkit-transition: background 0.2s ease;
     -moz-transition: background 0.2s ease;
@@ -1261,7 +1266,7 @@ footer p a:hover {
 }
 .tab-box ul li a.active {
     background-color: white;
-    color: #ff8d3c;
+    color: #9e2a2a;
     font-weight: bold;
     border: 1px solid #a3b1b1;
     border-bottom: none;
@@ -1337,7 +1342,7 @@ footer p a:hover {
     margin-top: 15px;
 }
 .tab-box .tabs .box .salon-info h6 {
-    color: #ff8d3c;
+    color: #9e2a2a;
     font-weight: bold;
     font-size: 14px;
     margin-top: 0;
@@ -1391,14 +1396,14 @@ footer p a:hover {
 }
 #Gracias .closeform {
     background: #fff;
-    color: #ff8d3c;
+    color: #9e2a2a;
     width: 50px;
     height: 50px;
     display: block;
     margin: 0 auto 50px;
     font-size: 25px;
     padding: 0;
-    border: 1px solid #ff8d3c;
+    border: 1px solid #9e2a2a;
     -webkit-appearance: none;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -1411,7 +1416,7 @@ footer p a:hover {
     border-radius: 50%;
 }
 #Gracias .closeform:hover {
-    background: #ff8d3c;
+    background: #9e2a2a;
     color: #fff;
 }
 #FormSolicitud {
@@ -1435,7 +1440,7 @@ footer p a:hover {
 }
 #FormSolicitud .closeform {
     background: #fff;
-    color: #ff8d3c;
+    color: #9e2a2a;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -1443,7 +1448,7 @@ footer p a:hover {
     margin: 0 auto 50px;
     padding: 0;
     font-size: 25px;
-    border: 1px solid #ff8d3c;
+    border: 1px solid #9e2a2a;
     -webkit-appearance: none;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -1456,7 +1461,7 @@ footer p a:hover {
     border-radius: 50%;
 }
 #FormSolicitud .closeform:hover {
-    background: #ff8d3c;
+    background: #9e2a2a;
     color: #fff;
 }
 #FormSolicitud .h3 {
@@ -1642,7 +1647,7 @@ footer p a:hover {
 @media (min-width: 769px) and (max-width: 1200px) {
     header .normalheader {
         height: 90px;
-        background-color: #ba2421;
+        background-color: #9e2a2a;
         color: white;
     }
     header .normalheader .logo,

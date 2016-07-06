@@ -35,10 +35,11 @@
                     <div class="col-xs-12">
                         <nav class="pull-right">
                             <!-- Button trigger modal -->
-                            <a href="registrar.jsp" id="registrar" class="">Registrarme</a>
+                            <a href="/registrar.html" id="registrar" class="">Registrarme</a>
                             <!-- Button trigger modal -->
 
-                            <a id="iniciar" data-toggle="modal" data-target="#myModal">Iniciar sesión</a>
+                            <a id="iniciar" data-toggle="modal" data-target="#myModal">Iniciar sesión Modal</a>
+                            <a href="/login.html">Iniciar sesión PRO</a>
                         </nav>
                     </div>
                 </div>
@@ -65,6 +66,13 @@
             <nav>
                 <div class="buttons">
                     <a href="">Iniciar sesión</a>
+                    <a href="login.html">Inicio</a>
+                    <a href="login.html">Actividades</a>
+                    <a href="login.html">Paquetes y Especiales</a>
+                    <a href="login.html">Reuniones y Eventos</a>
+                    <a href="login.html">Spa</a>
+                    <a href="login.html">Bares y Restaurantes</a>
+                    <a href="login.html">Galeria de Imagenes</a>
                 </div>
                 <div class="social">
                     <a target="_blank" href="http://facebook.com/coralhotels" class="icon-facebook"></a>
@@ -79,23 +87,23 @@
         <div  id="HomeSlide" class="master-slider ms-skin-default">
             <div class="ms-slide">
                 <img src="../resources/images/blank.gif" data-src="../resources/images/CoralCostaCaribe_Portada1.jpg"/>
-                <div class="ms-layer ms-caption" data-ease="easeInOutCubic" data-effect="bottom(50)" data-origin="mc" data-duration="1000">
-                    <h2>Texto de ejemplo I</h2>
-                    <h1>subtexto de ejemplo II</h1>
+                <div class="ms-layer ms-caption" data-ease="easeInOutCubic" data-effect="bottom(50)" data-origin="mc" data-duration="3000">
+                    <h2>Alanda Hotel</h2>
+                    <h1>¿Qué deseas hoy, alegria o tristeza?</h1>
                 </div>
             </div>
             <div class="ms-slide">
                 <img src="../resources/images/blank.gif" data-src="../resources/images/slidehome02.jpg"/>
-                <div class="ms-layer ms-caption" data-ease="easeInOutCubic" data-effect="bottom(50)" data-origin="mc" data-duration="1000">
-                    <h2>Texto de ejemplo I</h2>
-                    <h1>subtexto de ejemplo II</h1>
+                <div class="ms-layer ms-caption" data-ease="easeInOutCubic" data-effect="bottom(50)" data-origin="mc" data-duration="3000">
+                    <h2>Alanda Hotel</h2>
+                    <h1>Toda tu comodidad está aquí. ¡Ven y disfrutala!</h1>
                 </div>
             </div>
             <div class="ms-slide">
                 <img src="../../resources/images/blank.gif" data-src="../resources/images/slidehome03.jpg"/>
-                <div class="ms-layer ms-caption" data-ease="easeInOutCubic" data-effect="bottom(50)" data-origin="mc" data-duration="1000">
-                    <h2>Texto de ejemplo I</h2>
-                    <h1>subtexto de ejemplo II</h1>
+                <div class="ms-layer ms-caption" data-ease="easeInOutCubic" data-effect="bottom(50)" data-origin="mc" data-duration="3000">
+                    <h2>Alanda Hotel</h2>
+                    <h1>Por un servicio mejor una mirada diferente al mar.</h1>
                 </div>
             </div>
         </div>

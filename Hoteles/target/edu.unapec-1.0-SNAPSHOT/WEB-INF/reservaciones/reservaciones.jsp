@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <!--<![endif]-->
 <head>
