@@ -1,5 +1,6 @@
 package edu.unapec.servicios.implementaciones;
 
+import edu.unapec.entidades.Login;
 import edu.unapec.entidades.MensajesSistemaEntity;
 import edu.unapec.entidades.UsuariosEntity;
 import edu.unapec.enumerados.MesajesSistemaEnum;
@@ -24,13 +25,13 @@ public class UsuariosServImpl implements UsuariosServIF {
     public UsuariosServImpl(){}
 
     @Override
-    public RespuestaLogin iniciarSesion(String usuario, String clave) {
+    public RespuestaLogin iniciarSesion(Login login) {
 
         RespuestaLogin respuestaLogin = new RespuestaLogin();
         MensajesSistemaEntity mensajesSistema = new MensajesSistemaEntity();
-        List<UsuariosEntity> listaUsuarios = usuarioRep.iniciarSesion(usuario, clave);
+        List<UsuariosEntity> listaUsuarios = usuarioRep.iniciarSesion(login);
 
-        //Validando si el usuario es correcto
+        //Validando si el usuario es correcto o incorrecto
         if(listaUsuarios.size() == 0){
             mensajesSistema.setId(MesajesSistemaEnum.USUARIO_CLAVE_INCORRECTAS.obtenerIdMensaje());
             List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);

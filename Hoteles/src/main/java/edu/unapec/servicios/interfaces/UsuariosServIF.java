@@ -1,7 +1,8 @@
 package edu.unapec.servicios.interfaces;
+
+import edu.unapec.entidades.Login;
 import edu.unapec.entidades.UsuariosEntity;
 import edu.unapec.respuestas.RespuestaLogin;
-
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public interface UsuariosServIF {
 
-    RespuestaLogin iniciarSesion(String usuario, String clave);
+    RespuestaLogin iniciarSesion(Login login);
 
     List<UsuariosEntity> obtenerUsuarios();
 
