@@ -24,6 +24,8 @@ public class LoginControladora {
 
     @Autowired
     private ApplicationContext appContext;
+    private String _login = "/WEB-INF/generales/login";
+    private String _principal = "redirect:/principal.html";
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView inicio(Model model){
@@ -31,26 +33,20 @@ public class LoginControladora {
         RespuestaLogin respuestaLogin = new RespuestaLogin();
         respuestaLogin.setExitoso(true);
         model.addAttribute("respuestaLogin", respuestaLogin);
-        return new ModelAndView("login");
+        return new ModelAndView(_login);
     }
 
-    @RequestMapping(value = "/IniciarSesion", method = RequestMethod.POST)
+    @RequestMapping(value = "/iniciarSesion", method = RequestMethod.POST)
     public ModelAndView iniciarSesion(@ModelAttribute("login") Login login, Model model){
 
         UsuariosServIF usuariosServicio = appContext.getBean("usuariosServImpl", UsuariosServImpl.class);
-        RespuestaLogin respuestaLogin = new RespuestaLogin();
+        RespuestaLogin respuestaLogin = usuariosServicio.iniciarSesion(login);
 
-        String usuario = login.getUsuario();
-        String clave = login.getClave();
-
-        respuestaLogin = usuariosServicio.iniciarSesion(usuario, clave);
-
-        if (respuestaLogin.isExitoso()){
-            return new ModelAndView("index");
-        }
+        if (respuestaLogin.isExitoso())
+            return new ModelAndView(_principal);
 
         model.addAttribute("respuestaLogin", respuestaLogin);
-        return new ModelAndView("login");
+        return new ModelAndView(_login);
     }
 
 }

@@ -1,7 +1,7 @@
 package edu.unapec.repositorios.interfaces;
 
+import edu.unapec.entidades.Login;
 import edu.unapec.entidades.UsuariosEntity;
-
 import java.util.List;
 
 /**
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UsuariosRepIF {
 
-    List<UsuariosEntity> iniciarSesion(String usuario, String clave);
+    List<UsuariosEntity> iniciarSesion(Login login);
 
     List<UsuariosEntity> obtenerUsuarios();
 

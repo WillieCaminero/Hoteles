@@ -35,10 +35,11 @@
                     <div class="col-xs-12">
                         <nav class="pull-right">
                             <!-- Button trigger modal -->
-                            <a href="registrar.jsp" id="registrar" class="">Registrarme</a>
+                            <a href="/registrar.html" id="registrar" class="">Registrarme</a>
                             <!-- Button trigger modal -->
 
-                            <a id="iniciar" data-toggle="modal" data-target="#myModal">Iniciar sesión</a>
+                            <a id="iniciar" data-toggle="modal" data-target="#myModal">Iniciar sesión Modal</a>
+                            <a href="/login.html">Iniciar sesión PRO</a>
                         </nav>
                     </div>
                 </div>

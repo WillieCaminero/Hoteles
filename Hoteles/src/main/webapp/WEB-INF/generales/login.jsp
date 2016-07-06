@@ -32,7 +32,7 @@
                         <div class="row">
                             <img src="../resources/images/logo.png" width="200" class="img-responsive" style="margin: auto; display: table; padding-bottom: 15px;"alt="Logo">
                         </div>
-                        <form:form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login">
+                        <form:form id="loginForm" method="POST"  action="/iniciarSesion.html" modelAttribute="login">
                         <div class="form-group">
                                <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control input-style" placeholder="Usuario"/>
                             </div>
