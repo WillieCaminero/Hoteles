@@ -20,20 +20,44 @@
     <link href="../resources/css/jquery-ui.min.css" rel="stylesheet">
     <link href="../resources/css/jquery-ui.theme.min.css" rel="stylesheet">
     <link href="../resources/css/app.min.css" rel="stylesheet">
+    <link href="../resources/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
+    <div id="loader">
+        <i class="fa fa-cog fa-4x fa-spin"></i>
+    </div>
     <header>
         <div id="header-desktop" data-change="true" class="homeheader hidden-xs hidden-sm">
             <div class="container">
                 <a class="pull-left" href="index.html"></a>
-                <nav class="pull-right">
-                    <!-- Button trigger modal -->
-                    <a href="#">Realizar una reservación</a>
-                    <a href="login.html">Cerrar sesión</a>
-                </nav>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <nav class="pull-right">
+                            <!-- Button trigger modal -->
+                            <a href="registrar.jsp" id="registrar" class="">Registrarme</a>
+                            <!-- Button trigger modal -->
+
+                            <a id="iniciar" data-toggle="modal" data-target="#myModal">Iniciar sesión</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <nav class="pull-left">
+                            <a href="login.html">Inicio</a>
+                            <a href="login.html">Actividades</a>
+                            <a href="login.html">Paquetes y Especiales</a>
+                            <a href="login.html">Reuniones y Eventos</a>
+                            <a href="login.html">Spa</a>
+                            <a href="login.html">Bares y Restaurantes</a>
+                            <a href="login.html">Galeria de Imagenes</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div id="header-mobile" class="visible-xs visible-sm">
             <a href="index.html" class="logo"></a>
             <input id="triguermenu" type="checkbox">
@@ -111,7 +135,7 @@
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <a href="bodas.html" class="quicklink" style="background-image: url('../resources/images/restaurante(1).jpg')">
+                    <a href="bodas.html" class="quicklink" style="background-image: url('../resources/images/restaurante.jpg')">
                         <div class="info">
                             <h1>Bares</h1>
                             <p>y Restaurantes</p>
@@ -119,7 +143,7 @@
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <a href="spa.html" class="quicklink" style="background-image: url('../resources/images/Entretenimiento.jpg')">
+                    <a href="spa.html" class="quicklink" style="background-image: url('../resources/images/entretenimiento.jpg')">
                         <div class="info">
                             <h1>Actividades </h1>
                             <p>y Entretenimiento</p>
@@ -210,6 +234,48 @@
             <p style="color: white; font-weight: bold">@2016 - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #ededed">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel">INICIO DE SESION</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="row" id="">
+                            <div class="col-xs-12 animated fadeIn">
+                                <div class="login-form">
+                                    <div class="row">
+                                        <img src="../resources/images/logo.png" width="200" class="img-responsive" style="margin: auto; display: table; padding-bottom: 15px;"alt="Logo">
+                                    </div>
+                                    <form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login">
+                                        <div class="form-group">
+                                            <input type="text" path="usuario" id="usuario" name="usuario" class="form-control input-style" placeholder="Usuario"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" path="clave" id="clave" name="clave" class="form-control input-style" placeholder="Contraseña"/>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Recordarme
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="background: #ededed">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="../resources/js/jquery-1.11.3.min.js"></script>
     <script src="../resources/js/jquery-ui.min.js"></script>

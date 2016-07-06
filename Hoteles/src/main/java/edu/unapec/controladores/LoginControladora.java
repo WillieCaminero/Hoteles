@@ -26,12 +26,12 @@ public class LoginControladora {
     private ApplicationContext appContext;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String inicio(Model model){
+    public ModelAndView inicio(Model model){
         model.addAttribute("login", new Login());
         RespuestaLogin respuestaLogin = new RespuestaLogin();
         respuestaLogin.setExitoso(true);
         model.addAttribute("respuestaLogin", respuestaLogin);
-        return "/login";
+        return new ModelAndView("login");
     }
 
     @RequestMapping(value = "/IniciarSesion", method = RequestMethod.POST)
