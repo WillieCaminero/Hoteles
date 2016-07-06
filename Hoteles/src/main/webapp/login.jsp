@@ -24,7 +24,6 @@
     <link href="../resources/css/styles.css" rel="stylesheet">
 </head>
 <body>
-
     <section>
         <div class="cover">
             <div class="row" id="login-container">
@@ -59,8 +58,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../resources/js/jquery-1.11.3.min.js"></script>

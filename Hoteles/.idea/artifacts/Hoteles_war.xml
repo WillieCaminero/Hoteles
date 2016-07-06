@@ -5,7 +5,7 @@
       <element id="artifact" artifact-name="Hoteles:war exploded" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Oracle Jaca Data Base Connection 7" />
+          <element id="library" level="project" name="Oracle Java Data Base Connection 7" />
         </element>
       </element>
     </root>
