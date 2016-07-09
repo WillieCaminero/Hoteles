@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>Página Principal</title>
@@ -47,7 +49,7 @@
                     <div class="col-xs-12">
                         <nav class="pull-left">
                             <a href="login.html">Inicio</a>
-                            <a href="login.html">Actividades</a>
+                            <a href="actividades.html">Actividades</a>
                             <a href="login.html">Paquetes y Especiales</a>
                             <a href="login.html">Reuniones y Eventos</a>
                             <a href="login.html">Spa</a>
@@ -259,26 +261,33 @@
                                     <div class="row">
                                         <img src="../resources/images/logo.png" width="200" class="img-responsive" style="margin: auto; display: table; padding-bottom: 15px;"alt="Logo">
                                     </div>
-                                    <form id="loginForm" method="POST"  action="/IniciarSesion.html" modelAttribute="login">
+                                    <form:form id="loginForm" method="POST"  action="/iniciarSesionModal.html" modelAttribute="login">
                                         <div class="form-group">
-                                            <input type="text" path="usuario" id="usuario" name="usuario" class="form-control input-style" placeholder="Usuario"/>
+                                            <form:input path="usuario" id="usuario" name="usuario" cssClass="form-control input-style" placeholder="Usuario"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" path="clave" id="clave" name="clave" class="form-control input-style" placeholder="Contraseña"/>
+                                            <form:password path="clave" id="clave" name="clave" cssClass="form-control input-style" placeholder="Contraseña"/>
                                         </div>
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox"> Recordarme
                                             </label>
                                         </div>
-                                    </form>
+                                        <div class="form-group">
+                                            <c:if test="${respuestaLogin != null && !respuestaLogin.isExitoso()}">
+                                                ${respuestaLogin.getMensaje()}
+                                            </c:if>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-danger btn-block">Iniciar sesion</button>
+                                        </div>
+                                    </form:form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer" style="background: #ededed">
-                    <button type="button" class="btn btn-primary">Guardar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

@@ -718,7 +718,7 @@ footer p a:hover {
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2), 0px 0px 15px rgba(0, 0, 0, 0.2), 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 .homeheader nav a:hover {
-    color: #9e2a2a;
+    color: #e05d11;
 }
 .normalheader {
     height: 90px;
@@ -745,7 +745,7 @@ footer p a:hover {
 }
 .normalheader nav a:hover,
 .normalheader nav a.active {
-    color: #9e2a2a;
+    color: #e05d11;
 }
 .idioma {
     display: none;

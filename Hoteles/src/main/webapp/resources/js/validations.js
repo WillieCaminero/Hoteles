@@ -17,6 +17,57 @@ $(document).ready(function ($) {
         }
     });
 
+    $("#cedula").mask("00000000000")
+    $("#telefono").mask("0000000000")
+    $("#celular").mask("0000000000")
+
+    $("#registrarForm").validate({
+        rules:{
+            usuario: {
+                required: true,
+                maxlength: 25
+            },
+            clave: {
+                required: true,
+                maxlength: 100,
+                minlength: 8
+            },
+            confirmar_clave:{
+                required: true,
+                maxlength: 100,
+                minlength: 8,
+                equalTo: "#clave"
+            },
+            nombres:{
+                required: true,
+                maxlength: 50
+            },
+            apellidos:{
+                required: true,
+                maxlength: 50
+            },
+            cedula:{
+                required: true,
+                maxlength: 11,
+                minlength: 11
+            },
+            telefono:{
+                required: true,
+                maxlength: 10,
+                minlength: 10
+            },
+            celular:{
+                required: true,
+                maxlength: 10,
+                minlength: 10
+            },
+            correo:{
+                required: true,
+                maxlength: 50,
+                email:true
+            }
+        }
+    });
 });
 
 jQuery.extend(jQuery.validator.messages, {

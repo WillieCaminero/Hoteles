@@ -1,6 +1,6 @@
 package edu.unapec.repositorios.implementaciones;
 
-import edu.unapec.entidades.Login;
+import edu.unapec.modelos.Login;
 import edu.unapec.entidades.UsuariosEntity;
 import edu.unapec.repositorios.interfaces.UsuariosRepIF;
 import edu.unapec.utilidades.HibernateUtil;
@@ -29,20 +29,83 @@ public class UsuariosRepImpl implements UsuariosRepIF {
     }
 
     @Override
-    public List<UsuariosEntity> obtenerUsuarios() {
+    public List<UsuariosEntity> verificarUsuarioDisponible(UsuariosEntity usuariosEntity){
         Session session = HibernateUtil.obtenerInstancia().obtenerFabricaSesion().openSession();
-        String _HQL = "from UsuariosEntity";
-        List<UsuariosEntity> listaUsuarios = session.createQuery(_HQL).list();
+        String _HQL = "";
+        List<UsuariosEntity> listaUsuarios;
+        if(usuariosEntity.getId() == 0){
+            _HQL = "from UsuariosEntity where usuario = :usuario";
+            Query query = session.createQuery(_HQL);
+            query.setParameter("usuario", usuariosEntity.getUsuario().toLowerCase());
+            listaUsuarios = query.list();
+        }else{
+            _HQL = "from UsuariosEntity where usuario = :usuario and id != :id";
+            Query query = session.createQuery(_HQL);
+            query.setParameter("usuario", usuariosEntity.getUsuario().toLowerCase());
+            query.setParameter("id", usuariosEntity.getId());
+            listaUsuarios = query.list();
+        }
         return listaUsuarios;
     }
 
     @Override
-    public boolean agregarUsuario(UsuariosEntity usuariosEntity) {
+    public List<UsuariosEntity> verificarCedulaDisponible(UsuariosEntity usuariosEntity){
         Session session = HibernateUtil.obtenerInstancia().obtenerFabricaSesion().openSession();
-        Transaction tx = session.beginTransaction();
-        session.save(usuariosEntity);
-        tx.commit();
-        return true;
+        String _HQL = "";
+        List<UsuariosEntity> listaUsuarios;
+        if(usuariosEntity.getId() == 0){
+            _HQL = "from UsuariosEntity where cedula = :cedula";
+            Query query = session.createQuery(_HQL);
+            query.setParameter("cedula", usuariosEntity.getCedula());
+            listaUsuarios = query.list();
+        }else{
+            _HQL = "from UsuariosEntity where cedula = :cedula and id != :id";
+            Query query = session.createQuery(_HQL);
+            query.setParameter("cedula", usuariosEntity.getCedula());
+            query.setParameter("id", usuariosEntity.getId());
+            listaUsuarios = query.list();
+        }
+        return listaUsuarios;
+    }
+
+    @Override
+    public List<UsuariosEntity> verificarCorreoDisponible(UsuariosEntity usuariosEntity){
+        Session session = HibernateUtil.obtenerInstancia().obtenerFabricaSesion().openSession();
+        String _HQL = "";
+        List<UsuariosEntity> listaUsuarios;
+        if(usuariosEntity.getId() == 0){
+            _HQL = "from UsuariosEntity where correo = :correo";
+            Query query = session.createQuery(_HQL);
+            query.setParameter("correo", usuariosEntity.getCorreo());
+            listaUsuarios = query.list();
+        }else{
+            _HQL = "from UsuariosEntity where correo = :correo and id != :id";
+            Query query = session.createQuery(_HQL);
+            query.setParameter("correo", usuariosEntity.getCorreo());
+            query.setParameter("id", usuariosEntity.getId());
+            listaUsuarios = query.list();
+        }
+        return listaUsuarios;
+    }
+
+    @Override
+    public List<UsuariosEntity> obtenerUsuarios() {
+        Session session = HibernateUtil.obtenerInstancia().obtenerFabricaSesion().openSession();
+        String _HQL = "from UsuariosEntity";
+        return session.createQuery(_HQL).list();
+    }
+
+    @Override
+    public boolean agregarUsuario(UsuariosEntity usuariosEntity) {
+        try {
+            Session session = HibernateUtil.obtenerInstancia().obtenerFabricaSesion().openSession();
+            Transaction tx = session.beginTransaction();
+            session.save(usuariosEntity);
+            tx.commit();
+            return true;
+        }catch (Exception ex){
+            return false;
+        }
     }
 
     @Override

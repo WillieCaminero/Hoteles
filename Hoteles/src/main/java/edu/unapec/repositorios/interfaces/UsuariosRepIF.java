@@ -1,6 +1,6 @@
 package edu.unapec.repositorios.interfaces;
 
-import edu.unapec.entidades.Login;
+import edu.unapec.modelos.Login;
 import edu.unapec.entidades.UsuariosEntity;
 import java.util.List;
 
@@ -12,6 +12,12 @@ public interface UsuariosRepIF {
     List<UsuariosEntity> iniciarSesion(Login login);
 
     List<UsuariosEntity> obtenerUsuarios();
+
+    List<UsuariosEntity> verificarUsuarioDisponible(UsuariosEntity usuariosEntity);
+
+    List<UsuariosEntity> verificarCedulaDisponible(UsuariosEntity usuariosEntity);
+
+    List<UsuariosEntity> verificarCorreoDisponible(UsuariosEntity usuariosEntity);
 
     boolean agregarUsuario(UsuariosEntity usuariosEntity);
 

@@ -1,4 +1,4 @@
-package edu.unapec.entidades;
+package edu.unapec.modelos;
 
 /**
  * Created by WillieManuel on 24/6/16.

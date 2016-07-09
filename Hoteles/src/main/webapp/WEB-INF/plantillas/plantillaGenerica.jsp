@@ -12,94 +12,132 @@
         <title>
             <layout:block name="title"></layout:block>
         </title>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
 
-        <!-- Bootstrap -->
-        <link href="../../resources/css/normalize.css" rel="stylesheet"/>
-        <link href="../../resources/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="../../resources/css/app.min.css" rel="stylesheet"/>
-        <link href="../../resources/css/font-awesome.min.css" rel="stylesheet"/>
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <!-- ================== BEGIN BASE CSS STYLE ================== -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link href="../resources/css/jquery-ui.min.css" rel="stylesheet" />
+        <link href="../resources/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../resources/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="../resources/css/animate.min.css" rel="stylesheet" />
+        <link href="../resources/css/style2.css" rel="stylesheet" />
+        <link href="../resources/css/style-responsive.min.css" rel="stylesheet" />
+        <link href="../resources/css/default.css" rel="stylesheet" id="theme" />
+        <!-- ================== END BASE CSS STYLE ================== -->
+        <layout:block name="link"></layout:block>
+        <!-- ================== BEGIN BASE JS ================== -->
+        <script src="../resources/js/pace.min.js"></script>
+        <!-- ================== END BASE JS ================== -->
     </head>
     <body>
 
-        <div id="loader">
-            <i class="fa fa-cog fa-4x fa-spin"></i>
-        </div>
+        <!-- begin #page-loader -->
+        <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+        <!-- end #page-loader -->
 
-        <header>
-            <div id="header-desktop" data-change="true" class="hidden-xs hidden-sm normalheader">
-                <div class="container">
-                    <a class="pull-left" href="index.html"></a>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <nav class="pull-right">
-                                <!-- Button trigger modal -->
-                                <a href="login.html" id="iniciar" class="hide-test">Iniciar sesión</a>
-                            </nav>
-                        </div>
+        <!-- begin #page-container -->
+        <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+            <!-- begin #header -->
+            <div id="header" class="header navbar navbar-default navbar-fixed-top">
+                <!-- begin container-fluid -->
+                <div class="container-fluid">
+                    <!-- begin mobile sidebar expand / collapse button -->
+                    <div class="navbar-header">
+                        <a href="principal.html" class="navbar-brand"><span class=""></span> Alanda Hotel</a>
+                        <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                     </div>
+                    <!-- end mobile sidebar expand / collapse button -->
 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <nav class="pull-left">
-                                <a href="index.html">Inicio</a>
-                                <a href="login.html">Actividades</a>
-                                <a href="login.html">Paquetes y Especiales</a>
-                                <a href="login.html">Reuniones y Eventos</a>
-                                <a href="login.html">Spa</a>
-                                <a href="login.html">Bares y Restaurantes</a>
-                                <a href="login.html">Galeria de Imagenes</a>
-                            </nav>
-                        </div>
-                    </div>
+                    <!-- begin header navigation right -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown navbar-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="assets/img/user-13.jpg" alt="" />
+                                <span class="hidden-xs">Jeremy López</span> <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInLeft">
+                                <li class="arrow"></li>
+                                <li><a href="">Editar Perfil</a></li>
+                                <li class="divider"></li>
+                                <li><a href="bienvenida.html">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- end header navigation right -->
                 </div>
+                <!-- end container-fluid -->
             </div>
-        </header>
+            <!-- end #header -->
 
-        <div class="container">
-            <layout:block name="content"></layout:block>
+            <!-- begin #sidebar -->
+            <div id="sidebar" class="sidebar">
+                <!-- begin sidebar scrollbar -->
+                <div data-scrollbar="true" data-height="100%">
+                    <!-- begin sidebar user -->
+                    <!-- end sidebar user -->
+                    <!-- begin sidebar nav -->
+                    <ul class="nav">
+                        <li class="nav-header">Acciones</li>
+                        <li class="has-sub">
+                            <a href="principal.html">
+                                <i class="fa fa-laptop"></i>
+                                <span>Inicio</span>
+                            </a>
+                        <li class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-laptop"></i>
+                                <span>Reservaciones</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="reservaciones.html">Listado de reservaciones</a></li>
+                                <li><a href="agregarReservacion.html">Agregar reservaciones</a></li>
+                            </ul>
+                        </li>
+                        <!-- begin sidebar minify button -->
+                        <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+                        <!-- end sidebar minify button -->
+                    </ul>
+                    <!-- end sidebar nav -->
+                </div>
+                <!-- end sidebar scrollbar -->
+            </div>
+            <div class="sidebar-bg"></div>
+            <!-- end #sidebar -->
+
+            <!-- begin #content -->
+            <div id="content" class="content">
+                <layout:block name="content"></layout:block>
+            </div>
+            <!-- end #content -->
+
+            <!-- begin scroll to top btn -->
+            <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+            <!-- end scroll to top btn -->
         </div>
+        <!-- end page container -->
 
-        <footer>
-            <div class="container">
-                <nav>
-                    <a href="nosotros.html">Nosotros</a>
-                    <span class="hidden-xs">|</span>
-                    <a href="contacto.html">Contactos</a>
-                    <span class="hidden-xs">|</span>
-                    <a href="mapa-del-sitio.html">Mapa del Sitio</a>
-                    <span class="hidden-xs">|</span>
-                    <a href="politicas.html">Políticas de Privacidad</a>
-                    <span class="hidden-xs">|</span>
-                    <a href="terminos.html">Términos de Uso</a>
-                </nav>
-                <div class="social hidden-xs">
-                    <a target="_blank" href="http://facebook.com/coralhotels" class="icon-facebook"></a>
-                    <a target="_blank" href="http://twitter.com/CoralHotelsRD" class="icon-twitter"></a>
-                    <a target="_blank" href="http://instagram.com/coralcostacaribe" class="icon-instagram"></a>
-                </div>
-                <p style="color: white; font-weight: bold">@2016 - Todos los derechos reservados</p>
-            </div>
-        </footer>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="../../resources/js/jquery-1.11.3.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="../../resources/js/bootstrap.min.js"></script>
+        <!-- ================== BEGIN BASE JS ================== -->
+        <script src="../resources/js/jquery-1.11.3.min.js"></script>
+        <script src="../resources/js/jquery-migrate-1.1.0.min.js"></script>
+        <script src="../resources/js/jquery-ui.min.js"></script>
+        <script src="../resources/js/bootstrap.min.js"></script>
+        <script src="../resources/js/jquery.slimscroll.min.js"></script>
+        <script src="../resources/js/jquery.cookie.js"></script>
+        <!-- ================== END BASE JS ================== -->
+        <script src="../resources/js/apps2.min.js"></script>
         <script>
-            $(document).ready(function(){
-                $("#loader").fadeOut("slow");
+            $(document).ready(function() {
+                App.init();
             });
         </script>
-
+        <layout:block name="script"></layout:block>
     </body>
 </html>
