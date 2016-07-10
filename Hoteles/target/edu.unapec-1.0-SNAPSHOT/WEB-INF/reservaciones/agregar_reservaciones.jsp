@@ -1,153 +1,25 @@
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if !IE]><!-->
+<%--
+  Created by IntelliJ IDEA.
+  User: WillieManuel
+  Date: 6/7/16
+  Time: 2:01 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
-<!--<![endif]-->
+<%@taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 
-<head>
-	<meta charset="utf-8" />
-	<title>Color Admin | Wizards</title>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
-	
-	<!-- ================== BEGIN BASE CSS STYLE ================== -->
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-	<link href="../resources/css/jquery-ui.min.css" rel="stylesheet" />
-	<link href="../resources/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="../resources/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="../resources/css/animate.min.css" rel="stylesheet" />
-	<link href="../resources/css/style2.css" rel="stylesheet" />
-	<link href="../resources/css/style-responsive.min.css" rel="stylesheet" />
-	<link href="../resources/css/default.css" rel="stylesheet" id="theme" />
-	<!-- ================== END BASE CSS STYLE ================== -->
-	
-	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-	<link href="../resources/css/bwizard.min.css" rel="stylesheet" />
-	<!-- ================== END PAGE LEVEL STYLE ================== -->
-	
-	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="../resources/js/pace.min.js"></script>
-	<!-- ================== END BASE JS ================== -->
-</head>
-<body>
-<!-- begin #page-loader -->
-<div id="page-loader" class="fade in"><span class="spinner"></span></div>
-<!-- end #page-loader -->
+<layout:extends name="/WEB-INF/plantillas/plantillaGenerica.jsp">
 
-<!-- begin #page-container -->
-<div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
-	<!-- begin #header -->
-	<div id="header" class="header navbar navbar-default navbar-fixed-top">
-		<!-- begin container-fluid -->
-		<div class="container-fluid">
-			<!-- begin mobile sidebar expand / collapse button -->
-			<div class="navbar-header">
-				<img class="img-responsive" src="" alt="">
-				<a href="index-2.html" class="navbar-brand"><span class=""></span> Alanda Hotel</a>
-				<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<!-- end mobile sidebar expand / collapse button -->
+	<!--Title Page Dynamic-->
+	<layout:put block="title">Crear Reservaciones</layout:put>
+	<layout:put block="link">
+		<link href="../../resources/css/bwizard.min.css" rel="stylesheet" />
+	</layout:put>
+	<!--Contents Page Dynamic-->
+	<layout:put block="content">
 
-			<!-- begin header navigation right -->
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown navbar-user">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-						<img src="assets/img/user-13.jpg" alt="" />
-						<span class="hidden-xs">Jeremy López</span> <b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu animated fadeInLeft">
-						<li class="arrow"></li>
-						<li><a href="javascript:;">Editar Perfil</a></li>
-						<li class="divider"></li>
-						<li><a href="javascript:;">Cerrar sesión</a></li>
-					</ul>
-				</li>
-			</ul>
-			<!-- end header navigation right -->
-		</div>
-		<!-- end container-fluid -->
-	</div>
-	<!-- end #header -->
-
-	<!-- begin #sidebar -->
-	<div id="sidebar" class="sidebar">
-		<!-- begin sidebar scrollbar -->
-		<div data-scrollbar="true" data-height="100%">
-			<!-- begin sidebar user -->
-			<!-- end sidebar user -->
-			<!-- begin sidebar nav -->
-			<ul class="nav">
-				<li class="nav-header">Acciones</li>
-				<li class="has-sub">
-					<a href="javascript:;">
-						<i class="fa fa-laptop"></i>
-						<span>Inicio</span>
-					</a>
-				<li class="has-sub">
-					<a href="javascript:;">
-						<b class="caret pull-right"></b>
-						<i class="fa fa-laptop"></i>
-						<span>Reservaciones</span>
-					</a>
-					<ul class="sub-menu">
-						<li><a href="page_blank.html">Listado de reservaciones</a></li>
-						<li><a href="agregar_reservaciones.html">Agregar reservaciones</a></li>
-					</ul>
-				</li>
-				<!-- begin sidebar minify button -->
-				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
-				<!-- end sidebar minify button -->
-			</ul>
-			<!-- end sidebar nav -->
-		</div>
-		<!-- end sidebar scrollbar -->
-	</div>
-	<!-- end #header -->
-
-	<!-- begin #sidebar -->
-	<div id="sidebar" class="sidebar">
-		<!-- begin sidebar scrollbar -->
-		<div data-scrollbar="true" data-height="100%">
-			<!-- begin sidebar nav -->
-			<ul class="nav">
-				<li class="nav-header">Acciones</li>
-				<li class="has-sub">
-					<a href="javascript:;">
-						<i class="fa fa-laptop"></i>
-						<span>Inicio</span>
-					</a>
-				<li class="has-sub">
-					<a href="javascript:;">
-						<b class="caret pull-right"></b>
-						<i class="fa fa-laptop"></i>
-						<span>Reservaciones</span>
-					</a>
-					<ul class="sub-menu">
-						<li><a href="page_blank.html">Listado de reservaciones</a></li>
-						<li><a href="agregar_reservaciones.html">Agregar reservaciones</a></li>
-					</ul>
-				</li>
-				<!-- begin sidebar minify button -->
-				<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
-				<!-- end sidebar minify button -->
-			</ul>
-			<!-- end sidebar nav -->
-		</div>
-		<!-- end sidebar scrollbar -->
-	</div>
-	<div class="sidebar-bg"></div>
-	<!-- end #sidebar -->
-
-	<!-- begin #content -->
-	<div id="content" class="content">
 		<!-- begin page-header -->
-		<h1 class="page-header">Crear Reservación </h1>
+		<h1 class="page-header">Crear Reservación</h1>
 		<!-- end page-header -->
 
 		<!-- begin row -->
@@ -423,45 +295,29 @@
 			<!-- end col-12 -->
 		</div>
 		<!-- end row -->
-	</div>
-	<!-- end #content -->
-	<!-- begin scroll to top btn -->
-	<!-- end scroll to top btn -->
-</div>
-	
-	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="../resources/js/jquery-1.11.3.min.js"></script>
-	<script src="../resources/js/jquery-migrate-1.1.0.min.js"></script>
-	<script src="../resources/js/jquery-ui.min.js"></script>
-	<script src="../resources/js/bootstrap.min.js"></script>
-	<script src="../resources/js/jquery.slimscroll.min.js"></script>
-	<script src="../resources/js/jquery.cookie.js"></script>
-	<!-- ================== END BASE JS ================== -->
-	
-	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="../resources/js/bwizard.js"></script>
-	<script src="../resources/js/form-wizards.demo.min.js"></script>
-	<script src="../resources/js/apps2.min.js"></script>
-	<!-- ================== END PAGE LEVEL JS ================== -->
+	</layout:put>
 
-	<script>
-		$(document).ready(function() {
-			App.init();
-			FormWizard.init();
+	<layout:put block="script">
+		<script src="../../resources/js/pace.min.js"></script>
+		<script src="../../resources/js/bwizard.js"></script>
+		<script src="../../resources/js/form-wizards.demo.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				FormWizard.init();
 
-			$('.checkbox input').change(function() {
-				if ($(this).prop('checked')) {
-					$(this).closest('div').parent().parent().children().eq(1).children(0).css("opacity", "0.5");
-					$(this).closest('div').parent().parent().children().eq(1).children(1).children(0).removeClass("hidden");
-				}
-				else {
-					$(this).closest('div').parent().parent().children().eq(1).children(0).css("opacity", "");
-					$(this).closest('div').parent().parent().children().eq(1).children(1).children(0).addClass("hidden");
-				}
+				$('.checkbox input').change(function() {
+					if ($(this).prop('checked')) {
+						$(this).closest('div').parent().parent().children().eq(1).children(0).css("opacity", "0.5");
+						$(this).closest('div').parent().parent().children().eq(1).children(1).children(0).removeClass("hidden");
+					}
+					else {
+						$(this).closest('div').parent().parent().children().eq(1).children(0).css("opacity", "");
+						$(this).closest('div').parent().parent().children().eq(1).children(1).children(0).addClass("hidden");
+					}
+				});
 			});
-		});
-	</script>
+		</script>
+	</layout:put>
 
+</layout:extends>
 
-</body>
-</html>

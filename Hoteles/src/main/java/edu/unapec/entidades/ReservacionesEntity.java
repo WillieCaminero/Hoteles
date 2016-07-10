@@ -1,7 +1,7 @@
 package edu.unapec.entidades;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 /**
  * Created by WillieManuel on 19/6/16.
@@ -10,8 +10,8 @@ import java.sql.Time;
 @Table(name = "RESERVACIONES", schema = "C##RESER_HOTEL", catalog = "")
 public class ReservacionesEntity {
     private int id;
-    private Time fechaDesde;
-    private Time fechaHasta;
+    private Date fechaDesde;
+    private Date fechaHasta;
     private double montoEstadia;
 
     @Id
@@ -27,26 +27,24 @@ public class ReservacionesEntity {
 
     @Basic
     @Column(name = "FECHA_DESDE")
-    public Time getFechaDesde() {
+    public Date getFechaDesde() {
         return fechaDesde;
     }
 
-    public void setFechaDesde(Time fechaDesde) {
+    public void setFechaDesde(Date fechaDesde) {
         this.fechaDesde = fechaDesde;
     }
 
-    @Basic
-    @Column(name = "FECHA_HASTA")
-    public Time getFechaHasta() {
+    @Column(name="FECHA_HASTA", columnDefinition="DATE")
+    public Date getFechaHasta() {
         return fechaHasta;
     }
 
-    public void setFechaHasta(Time fechaHasta) {
+    public void setFechaHasta(Date fechaHasta) {
         this.fechaHasta = fechaHasta;
     }
 
-    @Basic
-    @Column(name = "MONTO_ESTADIA")
+    @Column(name="MONTO_ESTADIA", columnDefinition="DATE")
     public double getMontoEstadia() {
         return montoEstadia;
     }

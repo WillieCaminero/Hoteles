@@ -38,6 +38,7 @@
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" />
           <element id="library" level="project" name="Maven: kr.pe.kwonnam.jsp:jsp-template-inheritance:0.3.RELEASE" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.2.2" />
+          <element id="library" level="project" name="Oracle Java Data Base Connection 7" />
         </element>
       </element>
       <element id="directory" name="META-INF">

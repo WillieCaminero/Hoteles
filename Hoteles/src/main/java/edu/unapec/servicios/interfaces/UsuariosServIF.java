@@ -1,7 +1,8 @@
 package edu.unapec.servicios.interfaces;
 
-import edu.unapec.entidades.Login;
+import edu.unapec.modelos.Login;
 import edu.unapec.entidades.UsuariosEntity;
+import edu.unapec.respuestas.RespuestaGeneral;
 import edu.unapec.respuestas.RespuestaLogin;
 import java.util.List;
 
@@ -14,11 +15,15 @@ public interface UsuariosServIF {
 
     List<UsuariosEntity> obtenerUsuarios();
 
-    boolean agregarUsuario(UsuariosEntity usuariosEntity);
+    boolean verificarUsuarioDisponible(UsuariosEntity usuariosEntity);
+
+    boolean verificarCedulaDisponible(UsuariosEntity usuariosEntity);
+
+    boolean verificarCorreoDisponible(UsuariosEntity usuariosEntity);
+
+    RespuestaGeneral agregarUsuario(UsuariosEntity usuariosEntity);
 
     boolean EliminarUsuario(UsuariosEntity usuarioEntity);
-
-    boolean AgregarUsuario(UsuariosEntity usuarioEntity);
 
     boolean ActualizarUsuario(UsuariosEntity usuarioEntity);
 }

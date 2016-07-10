@@ -1,11 +1,12 @@
 package edu.unapec.servicios.implementaciones;
 
-import edu.unapec.entidades.Login;
+import edu.unapec.modelos.Login;
 import edu.unapec.entidades.MensajesSistemaEntity;
 import edu.unapec.entidades.UsuariosEntity;
 import edu.unapec.enumerados.MesajesSistemaEnum;
 import edu.unapec.repositorios.interfaces.MensajesSistemaRepIF;
 import edu.unapec.repositorios.interfaces.UsuariosRepIF;
+import edu.unapec.respuestas.RespuestaGeneral;
 import edu.unapec.respuestas.RespuestaLogin;
 import edu.unapec.servicios.interfaces.UsuariosServIF;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,17 +50,63 @@ public class UsuariosServImpl implements UsuariosServIF {
     }
 
     @Override
-    public boolean agregarUsuario(UsuariosEntity usuariosEntity) {
-        return usuarioRep.agregarUsuario(usuariosEntity);
+    public boolean verificarUsuarioDisponible(UsuariosEntity usuariosEntity){
+        List<UsuariosEntity> listaUsuarios = usuarioRep.verificarUsuarioDisponible(usuariosEntity);
+        return listaUsuarios.size() == 0 ? true : false;
+    }
+
+    @Override
+    public boolean verificarCedulaDisponible(UsuariosEntity usuariosEntity){
+        List<UsuariosEntity> listaUsuarios = usuarioRep.verificarCedulaDisponible(usuariosEntity);
+        return listaUsuarios.size() == 0 ? true : false;
+    }
+
+    @Override
+    public boolean verificarCorreoDisponible(UsuariosEntity usuariosEntity){
+        List<UsuariosEntity> listaUsuarios = usuarioRep.verificarCorreoDisponible(usuariosEntity);
+        return listaUsuarios.size() == 0 ? true : false;
+    }
+
+    @Override
+    public RespuestaGeneral agregarUsuario(UsuariosEntity usuariosEntity) {
+
+        RespuestaGeneral respuesta = new RespuestaGeneral();
+        MensajesSistemaEntity mensajesSistema = new MensajesSistemaEntity();
+
+        if(!verificarUsuarioDisponible(usuariosEntity)){
+            mensajesSistema.setId(MesajesSistemaEnum.USUARIO_NO_DISPONIBLE.obtenerIdMensaje());
+            List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);
+            respuesta.setMensaje(mensajes.get(0).getDescripcion());
+            return respuesta;
+        }
+        else if(!verificarCedulaDisponible(usuariosEntity)){
+            mensajesSistema.setId(MesajesSistemaEnum.CEDULA_NO_DISPONIBLE.obtenerIdMensaje());
+            List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);
+            respuesta.setMensaje(mensajes.get(0).getDescripcion());
+            return respuesta;
+        }
+        else if(!verificarCorreoDisponible(usuariosEntity)) {
+            mensajesSistema.setId(MesajesSistemaEnum.CORREO_NO_DISPONIBLE.obtenerIdMensaje());
+            List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);
+            respuesta.setMensaje(mensajes.get(0).getDescripcion());
+            return respuesta;
+        }
+
+        if(usuarioRep.agregarUsuario(usuariosEntity)){
+            mensajesSistema.setId(MesajesSistemaEnum.REGISTRO_EXITOSO.obtenerIdMensaje());
+            List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);
+            respuesta.setMensaje(mensajes.get(0).getDescripcion());
+            return respuesta;
+        }else{
+            mensajesSistema.setId(MesajesSistemaEnum.REGISTRO_FALLIDO.obtenerIdMensaje());
+            List<MensajesSistemaEntity> mensajes = mensajesRep.obtenerMensajeSistema(mensajesSistema);
+            respuesta.setMensaje(mensajes.get(0).getDescripcion());
+            return respuesta;
+        }
     }
 
     @Override
     public boolean EliminarUsuario(UsuariosEntity usuarioEntity) {
-        return false;
-    }
-
-    @Override
-    public boolean AgregarUsuario(UsuariosEntity usuarioEntity) {
         return false;
     }
 

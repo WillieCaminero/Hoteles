@@ -1,7 +1,6 @@
 package edu.unapec.controladores;
 
-import edu.unapec.entidades.Login;
-import edu.unapec.entidades.UsuariosEntity;
+import edu.unapec.modelos.Login;
 import edu.unapec.respuestas.RespuestaLogin;
 import edu.unapec.servicios.implementaciones.UsuariosServImpl;
 import edu.unapec.servicios.interfaces.UsuariosServIF;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-
 /**
  * Created by WillieManuel on 19/6/16.
  */
@@ -24,8 +21,9 @@ public class LoginControladora {
 
     @Autowired
     private ApplicationContext appContext;
-    private String _login = "/WEB-INF/generales/login";
-    private String _principal = "redirect:/principal.html";
+    private final String _login = "/WEB-INF/generales/login";
+    private final String _principal = "redirect:/principal.html";
+    private final String _bienvenida= "/WEB-INF/generales/index";
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView inicio(Model model){
@@ -47,6 +45,19 @@ public class LoginControladora {
 
         model.addAttribute("respuestaLogin", respuestaLogin);
         return new ModelAndView(_login);
+    }
+
+    @RequestMapping(value = "/iniciarSesionModal", method = RequestMethod.POST)
+    public ModelAndView iniciarSesionModal(@ModelAttribute("login") Login login, Model model){
+
+        UsuariosServIF usuariosServicio = appContext.getBean("usuariosServImpl", UsuariosServImpl.class);
+        RespuestaLogin respuestaLogin = usuariosServicio.iniciarSesion(login);
+
+        if (respuestaLogin.isExitoso())
+            return new ModelAndView(_principal);
+
+        model.addAttribute("respuestaLogin", respuestaLogin);
+        return new ModelAndView(_bienvenida);
     }
 
 }

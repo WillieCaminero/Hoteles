@@ -15,14 +15,7 @@
 
     <!--Contents Page Dynamic-->
     <layout:put block="content">
-        <div class="row">
-            <div class="col-md-12" style="min-height: 80%;">
-                <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin porta,augue ut
-                        ornare sagittis, diam libero facilisis augue, quis accumsan enim velit a mauris.</p>
-                </div>
-            </div>
-        </div>
+
     </layout:put>
 
 </layout:extends>
